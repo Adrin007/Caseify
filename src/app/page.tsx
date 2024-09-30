@@ -2,7 +2,7 @@
 "use client"
 import Navbar from "@/components/navbar";
 import { StarFilledIcon } from "@radix-ui/react-icons";
-import { ArrowRight, Check, ExternalLink, Fingerprint, ShieldCheck,Sparkles, Zap} from "lucide-react";
+import { ArrowRight, Check, ExternalLink, Fingerprint, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import Image from "next/image";
 import PhoneSkel from "@/components/phoneSkel";
 import { useEffect, useState } from "react";
@@ -196,53 +196,57 @@ export default function Home() {
       </div>
       <div className="mt-10 md:mt-20">
         <h1 className="md:text-5xl text-4xl font-bold text-black text-balance tracking-tight text-center md:text-wrap !leading-tight">Features That Set Us <span className="text-white bg-[#6C48C5] px-2 rounded-lg pt-[3px]">Apart</span></h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center mt-[3rem] mx-7 gap-5 md:mx-20">
-          <div className="bg-white/25 rounded-r-xl border-l-0 md:border-l-2 md:rounded-xl border-2 border-[#6C48C5] md:border-gray-300 shadow-lg flex flex-row gap-2 px-4 py-5 items-center justify-center md:items-start md:justify-start relative md:flex-col">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center justify-center mt-[3rem] mx-7 gap-6 md:mx-20">
+        <div id="box" className="bg-white/25 rounded-r-xl border-l-0 md:border-l-2 md:rounded-3xl border-2 border-[#6C48C5] md:border-gray-300 shadow-lg flex flex-row gap-2 px-4 py-5 items-center justify-center md:items-start md:justify-start relative md:flex-col overflow-hidden">
+            <div id="circle" className="w-[8rem] h-[8rem] rounded-full bg-[#952aff] overflow-hidden absolute -right-[4rem] -top-[4rem] hidden md:block"></div>
             <span className="h-full w-[10px] bg-[#6C48C5] absolute left-0 md:hidden"></span>
-            <div className="flex flex-row gap-3">
-              <ShieldCheck className="text-[#6C48C5] md:size-[30px]"></ShieldCheck>
-              <h1 className="md:text-xl md:mt-[2px]">High-quality R2SiO material</h1>
+            <div className="flex flex-row gap-3 z-10">
+              <Fingerprint className="text-[#6C48C5] md:text-[#952aff] md:size-[30px] logo"></Fingerprint>
+              <h1 className="md:text-xl md:mt-[2px] md:text-[#952aff] tracking-tight heading">High-quality R2SiO material</h1>
             </div>
-            <p className="text-md hidden md:block mt-3">Crafted from premium R2SiO silicone, our cases offer a perfect balance of durability and softness. Resistant to scratches, drops, and yellowing, they provide long-lasting protection with a sleek, smooth finish.</p>
-            <div className="flex flex-row gap-2 hidden md:flex mt-2">
-              <h1 className="text-[#6C48C5]">See details</h1>
-              <ExternalLink className="text-[#6C48C5] size-[18px] mt-[2px]"></ExternalLink>
+            <p className="text-md hidden md:block mt-3 z-10 para">Crafted from premium R2SiO silicone, our cases offer a perfect balance of durability and softness. Resistant to scratches, drops, and yellowing.</p>
+            <div className="flex flex-row gap-2 hidden md:flex mt-2 z-10">
+              <h1 className="text-[#6C48C5] md:text-[#952aff] link">See details</h1>
+              <ExternalLink className="text-[#6C48C5] md:text-[#952aff] size-[18px] mt-[2px] logo"></ExternalLink>
             </div>
           </div>
-          <div className="bg-white/25 rounded-r-xl border-l-0 md:border-l-2 md:rounded-xl border-2 border-[#6C48C5] md:border-gray-300 shadow-lg flex flex-row gap-2 px-4 py-5 items-center justify-center md:items-start md:justify-start relative md:flex-col">
+          <div id="box" className="bg-white/25 rounded-r-xl border-l-0 md:border-l-2 md:rounded-3xl border-2 border-[#6C48C5] md:border-gray-300 shadow-lg flex flex-row gap-2 px-4 py-5 items-center justify-center md:items-start md:justify-start relative md:flex-col overflow-hidden">
+            <div id="circle" className="w-[8rem] h-[8rem] rounded-full bg-[#3ecd5e] overflow-hidden absolute -right-[4rem] -top-[4rem] hidden md:block"></div>
             <span className="h-full w-[10px] bg-[#6C48C5] absolute left-0 md:hidden"></span>
-            <div className="flex flex-row gap-3">
-              <Fingerprint className="text-[#6C48C5] md:size-[30px]"></Fingerprint>
-              <h1 className="md:text-xl md:mt-[2px] tracking-tight">Fingerprint resistant coating</h1>
+            <div className="flex flex-row gap-3 z-10">
+              <ShieldCheck className="text-[#6C48C5] md:text-[#3ecd5e] md:size-[30px] logo"></ShieldCheck>
+              <h1 className="md:text-xl md:mt-[2px] tracking-tight heading md:text-[#3ecd5e]">Fingerprint resistant coating</h1>
             </div>
-            <p className="text-md hidden md:block mt-3">Designed with a premium fingerprint-resistant coating, our cases stay clean and smudge-free, even with regular handling. Enjoy a sleek, polished look all day, with less cleaning and more protection for your phone.</p>
-            <div className="flex flex-row gap-2 hidden md:flex mt-2">
-              <h1 className="text-[#6C48C5]">See details</h1>
-              <ExternalLink className="text-[#6C48C5] size-[18px] mt-[2px]"></ExternalLink>
+            <p className="text-md hidden md:block mt-3 z-10 para">Designed with a premium fingerprint-resistant coating, our cases stay clean and smudge-free, even with regular handling.</p>
+            <div className="flex flex-row gap-2 hidden md:flex mt-2 z-10">
+              <h1 className="text-[#6C48C5] md:text-[#3ecd5e] link">See details</h1>
+              <ExternalLink className="text-[#6C48C5] md:text-[#3ecd5e] size-[18px] mt-[2px] logo"></ExternalLink>
             </div>
           </div>
-          <div className="bg-white/25 rounded-r-xl border-l-0 md:border-l-2 md:rounded-xl border-2 border-[#6C48C5] md:border-gray-300 shadow-lg flex flex-row gap-2 px-4 py-5 items-center justify-center md:items-start md:justify-start relative md:flex-col">
+          <div id="box" className="bg-white/25 rounded-r-xl border-l-0 md:border-l-2 md:rounded-3xl border-2 border-[#6C48C5] md:border-gray-300 shadow-lg flex flex-row gap-2 px-4 py-5 items-center justify-center md:items-start md:justify-start relative md:flex-col overflow-hidden">
+            <div id="circle" className="w-[8rem] h-[8rem] rounded-full bg-[#FF204E] overflow-hidden absolute -right-[4rem] -top-[4rem] hidden md:block"></div>
             <span className="h-full w-[10px] bg-[#6C48C5] absolute left-0 md:hidden"></span>
-            <div className="flex flex-row gap-3">
-              <Zap className="text-[#6C48C5] md:size-[30px]"></Zap>
-              <h1 className="md:text-xl md:mt-[2px] tracking-tight">Wireless charging compatible</h1>
+            <div className="flex flex-row gap-3 z-10">
+              <Zap className="text-[#6C48C5] md:text-[#FF204E] md:size-[30px] logo"></Zap>
+              <h1 className="md:text-xl md:mt-[2px] tracking-tight md:text-[#FF204E] heading">Wireless charging compatible</h1>
             </div>
-            <p className="text-md hidden md:block mt-3">Our cases are designed for seamless wireless charging, allowing you to power up your device without the hassle of removing the case. Enjoy the convenience of quick, efficient charging while keeping your phone protected and stylish.</p>
-            <div className="flex flex-row gap-2 hidden md:flex mt-2">
-              <h1 className="text-[#6C48C5]">See details</h1>
-              <ExternalLink className="text-[#6C48C5] size-[18px] mt-[2px]"></ExternalLink>
+            <p className="text-md hidden md:block mt-3 z-10 para">Our cases are designed for seamless wireless charging, allowing you to power up your device without the hassle of removing the case.</p>
+            <div className="flex flex-row gap-2 hidden md:flex mt-2 z-10">
+              <h1 className="text-[#6C48C5] md:text-[#FF204E] link">See details</h1>
+              <ExternalLink className="text-[#6C48C5] md:text-[#FF204E] size-[18px] mt-[2px] logo"></ExternalLink>
             </div>
           </div>
-          <div className="bg-white/25 rounded-r-xl border-l-0 md:border-l-2 md:rounded-xl border-2 border-[#6C48C5] md:border-gray-300 shadow-lg flex flex-row gap-2 px-4 py-5 items-center justify-center md:items-start md:justify-start relative md:flex-col">
+          <div id="box" className="bg-white/25 rounded-r-xl border-l-0 md:border-l-2 md:rounded-3xl border-2 border-[#6C48C5] md:border-gray-300 shadow-lg flex flex-row gap-2 px-4 py-5 items-center justify-center md:items-start md:justify-start relative md:flex-col overflow-hidden">
+            <div id="circle" className="w-[8rem] h-[8rem] rounded-full bg-[#4F75FF] overflow-hidden absolute -right-[4rem] -top-[4rem] hidden md:block"></div>
             <span className="h-full w-[10px] bg-[#6C48C5] absolute left-0 md:hidden"></span>
-            <div className="flex flex-row gap-3">
-              <Sparkles className="text-[#6C48C5] md:size-[30px]"></Sparkles>
-              <h1 className="md:text-xl md:mt-[2px] tracking-tight">Matte or Glossy finish option</h1>
+            <div className="flex flex-row gap-3 z-10">
+              <Sparkles className="text-[#6C48C5] md:text-[#4F75FF] md:size-[30px] logo"></Sparkles>
+              <h1 className="md:text-xl md:mt-[2px] tracking-tight md:text-[#4F75FF] heading">Matte or Glossy finish option</h1>
             </div>
-            <p className="text-md hidden md:block mt-3">Choose between our elegant matte and stunning glossy finishes to match your style. The matte option provides a sleek look with grip, while the glossy finish offers vibrant shine that enhances colors.</p>
-            <div className="flex flex-row gap-2 hidden md:flex mt-2">
-              <h1 className="text-[#6C48C5]">See details</h1>
-              <ExternalLink className="text-[#6C48C5] size-[18px] mt-[2px]"></ExternalLink>
+            <p className="text-md hidden md:block mt-3 z-10 para">Choose between our elegant matte and stunning glossy finishes to match your style. The matte option provides a sleek look with grip.</p>
+            <div className="flex flex-row gap-2 hidden md:flex mt-2 z-10">
+              <h1 className="text-[#6C48C5] md:text-[#4F75FF] link">See details</h1>
+              <ExternalLink className="text-[#6C48C5] md:text-[#4F75FF] size-[18px] mt-[2px] logo"></ExternalLink>
             </div>
           </div>
         </div>
