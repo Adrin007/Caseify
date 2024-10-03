@@ -135,7 +135,7 @@ export default function Home() {
             <div className="flex flex-row gap-5 mt-5">
               <Image src={"/users/user-1.png"} width={40} height={40} alt="User1" className="rounded-full" />
               <div className="flex flex-col">
-                <h1 className="font-bold">Jaswanth</h1>
+                <h1 className="font-bold">Akash</h1>
                 <div className="flex flex-row gap-1">
                   <Check className="size-[20px] text-[#6C48C5]"></Check>
                   <h1 className="text-sm">Verified Purchase</h1>
