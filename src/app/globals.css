@@ -95,30 +95,33 @@
 .fade-out {
   opacity: 0; 
 }
-#box:hover #circle{
+#box:hover #circle {
   transform: scale(10);
 }
-#box:hover .heading{
-  transition: all;
-  transition-duration: 500ms;
-  color:white
+
+#box .heading,
+#box .para,
+#box .link,
+#box .logo {
+  transition: all 750ms ease;
 }
-#box:hover .para{
-  transition: all;
-  transition-duration: 500ms;
-  color:white
+
+#box:hover .heading {
+  color: white;
 }
-#box:hover .link{
-  transition: all;
-  transition-duration: 500ms;
-  color:white
+
+#box:hover .para {
+  color: white;
 }
-#box:hover .logo{
-  transition: all;
-  transition-duration: 500ms;
-  color:white
+
+#box:hover .link {
+  color: white;
 }
-#circle{
-  transition: all;
-  transition-duration: 500ms;
+
+#box:hover .logo {
+  color: white;
+}
+
+#circle {
+  transition: all 750ms ease;
 }
