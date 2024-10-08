@@ -125,3 +125,21 @@
 #circle {
   transition: all 750ms ease;
 }
+
+@keyframes blob-rotation {
+  from {
+    rotate: 0deg;
+  }
+  50% {
+    scale: 1 1.5;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+.blob {
+  animation: blob-rotation 15s infinite;
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  background: linear-gradient(45deg, #663dff,#aa00ff,#cc4499);
+}

@@ -1,6 +1,10 @@
 import { ArrowRight } from 'lucide-react'
-
+import { useRouter } from 'next/navigation';
 const Navbar = () => {
+  const router = useRouter()
+  const loginClickHandler = () =>{
+    router.push('/login')
+  }
   return (
     <div className='sticky top-0 z-[100] border-b border-gray-200 bg-white/75 backdrop-blur-lg'>
         <div className='py-4 flex flex-row justify-between items-center'>
@@ -11,7 +15,7 @@ const Navbar = () => {
             <div className='hover:md:bg-gray-400/15 md:px-2 md:py-2 md:rounded-lg transition-colors duration-500'>
               <h1>Sign up</h1>
             </div>
-            <div className='hover:md:bg-gray-400/15 md:px-2 md:py-2 md:rounded-lg transition-colors duration-500'>
+            <div className='hover:md:bg-gray-400/15 md:px-2 md:py-2 md:rounded-lg transition-colors duration-500' onClick={loginClickHandler}>
               <h1>Login</h1>
             </div>
             <div>
