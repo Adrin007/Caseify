@@ -138,7 +138,7 @@
   }
 }
 .blob {
-  animation: blob-rotation 15s infinite;
+  animation: blob-rotation 10s infinite;
   aspect-ratio: 1;
   translate: -50% -50%;
   background: linear-gradient(45deg, #663dff,#aa00ff,#cc4499);

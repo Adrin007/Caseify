@@ -5,6 +5,9 @@ const Navbar = () => {
   const loginClickHandler = () =>{
     router.push('/login')
   }
+  const signinClickHandler = () =>{
+    router.push('/sign-in')
+  }
   return (
     <div className='sticky top-0 z-[100] border-b border-gray-200 bg-white/75 backdrop-blur-lg'>
         <div className='py-4 flex flex-row justify-between items-center'>
@@ -12,7 +15,7 @@ const Navbar = () => {
             <h1 className='font-bold text-lg'>CASEi<span className='text-[#6C48C5]'>FY</span></h1>
           </div>
           <div className='flex flex-row gap-5 mr-3 md:mr-[4rem] text-sm items-center'>
-            <div className='hover:md:bg-gray-400/15 md:px-2 md:py-2 md:rounded-lg transition-colors duration-500'>
+            <div className='hover:md:bg-gray-400/15 md:px-2 md:py-2 md:rounded-lg transition-colors duration-500' onClick={signinClickHandler}>
               <h1>Sign up</h1>
             </div>
             <div className='hover:md:bg-gray-400/15 md:px-2 md:py-2 md:rounded-lg transition-colors duration-500' onClick={loginClickHandler}>
