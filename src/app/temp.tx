@@ -1,0 +1,30 @@
+<div className="w-full mt-8 md:mt-5 bg-[#E6E6FA] md:bg-white/40 md:backdrop-filter md:backdrop-blur-[90px] rounded-2xl px-1">
+                <div className="flex flex-col items-center justify-center pt-10 gap-3 px-3">
+                  <input type="email" name="emailId" id="" className="w-full py-3 px-4 rounded-2xl bg-[#fefefe] md:bg-[#F2F2F2] focus:outline-none shadow-inner" placeholder="Enter Email" />
+                  <input type="password" name="emailId" id="" className="px-4 w-full py-3 rounded-2xl bg-[#fefefe] md:bg-[#F2F2F2] focus:outline-none shadow-inner" placeholder="Enter Password" />
+                  <input type="password" name="emailId" id="" className="px-4 w-full py-3 rounded-2xl bg-[#fefefe] md:bg-[#F2F2F2] focus:outline-none shadow-inner" placeholder="Confirm Password" />
+                  <div className="flex w-full items-end justify-end">
+                    <h1 className="text-sm text-black/50">forgot password?</h1>
+                  </div>
+                  <div className="px-5 w-full">
+                    <div className="h-px w-full bg-black/10 rounded-full md:hidden px-5"></div>
+                  </div>
+                  <div className="w-full bg-[#6C48C5] py-3 rounded-2xl text-center mt-3 md:mt-0 mb-2 hover:bg-[#6C48C5]/80 transition-all duration-500">
+                    <h1 className="text-white">Sign-In</h1>
+                  </div>
+                  <div className="w-full bg-[#fefefe] py-3 rounded-2xl text-center flex flex-row items-center justify-center gap-3 shadow-inner md:bg-[#F2F2F2]">
+                    <Image src="/google.png" width={25} height={25} alt="google" />
+                    <h1 className="text-black">Continue with Google</h1>
+                  </div>
+                  <div className="flex flex-row gap-3 mb-10 md:mb-7 w-full">
+                    <div className="w-full bg-[#fefefe] py-3 rounded-2xl text-center flex flex-row items-center justify-center gap-3 px-4 shadow-inner md:bg-[#F2F2F2]">
+                      <Image src="/x.png" width={25} height={25} alt="google" />
+                      <h1 className="text-black">Facebook</h1>
+                    </div>
+                    <div className="w-full bg-[#fefefe] py-3 rounded-2xl text-center flex flex-row items-center justify-center gap-3 px-4 shadow-inner md:bg-[#F2F2F2]">
+                      <Image src="/github.png" width={25} height={25} alt="google" />
+                      <h1 className="text-black">Github</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>

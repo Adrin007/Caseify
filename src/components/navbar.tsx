@@ -3,10 +3,10 @@ import { useRouter } from 'next/navigation';
 const Navbar = () => {
   const router = useRouter()
   const loginClickHandler = () =>{
-    router.push('/login')
+    router.push('/auth/login')
   }
   const signinClickHandler = () =>{
-    router.push('/sign-in')
+    router.push('/auth/register')
   }
   return (
     <div className='sticky top-0 z-[100] border-b border-gray-200 bg-white/75 backdrop-blur-lg'>
@@ -16,7 +16,7 @@ const Navbar = () => {
           </div>
           <div className='flex flex-row gap-5 mr-3 md:mr-[4rem] text-sm items-center'>
             <div className='hover:md:bg-gray-400/15 md:px-2 md:py-2 md:rounded-lg transition-colors duration-500' onClick={signinClickHandler}>
-              <h1>Sign up</h1>
+              <h1>Register</h1>
             </div>
             <div className='hover:md:bg-gray-400/15 md:px-2 md:py-2 md:rounded-lg transition-colors duration-500' onClick={loginClickHandler}>
               <h1>Login</h1>

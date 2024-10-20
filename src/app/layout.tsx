@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import {Recursive} from '@next/font/google'
+import { Recursive } from '@next/font/google'
+import { Toaster } from "react-hot-toast"
 
-const recursive = Recursive({
-  subsets:['latin'],
-  weight:['400','700']
+const font = Recursive({
+  subsets: ['latin'],
+  weight: ['400', '700']
 })
 
 export const metadata: Metadata = {
@@ -19,8 +20,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="no-scrollbar">
-      <body className={recursive.className}>
+      <body className={font.className}>
         {children}
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+          gutter={8}
+          containerClassName=""
+          containerStyle={{}}
+          toastOptions={{
+            duration: 2000,
+          }}
+        />
       </body>
     </html>
   );

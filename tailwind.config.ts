@@ -9,6 +9,20 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		keyframes: {
+			enter: {
+			  '0%': { opacity: '0', transform: 'scale(0.9)' },
+			  '100%': { opacity: '1', transform: 'scale(1)' },
+			},
+			leave: {
+			  '0%': { opacity: '1', transform: 'scale(1)' },
+			  '100%': { opacity: '0', transform: 'scale(0.9)' },
+			},
+		  },
+		  animation: {
+			enter: 'enter 300ms ease-out',
+			leave: 'leave 150ms ease-in forwards',
+		  },	
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

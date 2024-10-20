@@ -143,3 +143,7 @@
   translate: -50% -50%;
   background: linear-gradient(45deg, #663dff,#aa00ff,#cc4499);
 }
+
+.toast{
+  background-color:rebeccapurple;
+}
