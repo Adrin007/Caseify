@@ -6,8 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { ErrorMessage } from "./errorMessage"
 import { RegisterAction } from "@/action/registerAction"
 import { TailwindToast } from "../tailwindToast"
-import toast from "react-hot-toast"
-import { TailwindToastLoading } from "../loadingTailwindToast"
 
 export const RegisterForm = () => {
 
@@ -21,9 +19,7 @@ export const RegisterForm = () => {
     });
 
     const submitCallback = (values:z.infer<typeof RegisterSchema>) => {
-        const loadingToastId = toast.custom(<TailwindToastLoading message="Connecting to the Database" />)
         RegisterAction(values).then((data:{message:string,context:string})=>{
-            toast.dismiss(loadingToastId)
             TailwindToast({message:data.message,context:data.context})
         })
     }
