@@ -6,8 +6,11 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { ErrorMessage } from "./errorMessage"
 import { RegisterAction } from "@/action/registerAction"
 import { TailwindToast } from "../tailwindToast"
+import { useTransition } from "react"
 
 export const RegisterForm = () => {
+
+    const [isPending,setTransition] = useTransition()
 
     const { register, handleSubmit,formState: { errors } } = useForm<z.infer<typeof RegisterSchema>>({
         resolver:zodResolver(RegisterSchema),
@@ -19,8 +22,10 @@ export const RegisterForm = () => {
     });
 
     const submitCallback = (values:z.infer<typeof RegisterSchema>) => {
-        RegisterAction(values).then((data:{message:string,context:string})=>{
-            TailwindToast({message:data.message,context:data.context})
+        setTransition(()=>{
+            RegisterAction(values).then((data:{message:string,context:string})=>{
+                TailwindToast({message:data.message,context:data.context})
+            })
         })
     }
 
@@ -30,13 +35,13 @@ export const RegisterForm = () => {
             <div className="flex flex-col items-center justify-center pt-10 gap-3 px-3">
 
                 <form onSubmit={handleSubmit(submitCallback)} className="flex flex-col gap-3 w-full">
-                    <input type="email" id="email" className="w-full py-3 px-4 rounded-2xl bg-[#fefefe] md:bg-[#F2F2F2] focus:outline-none shadow-inner" placeholder="Enter Email" {...register("email")}/>
+                    <input type="email" id="email" className="w-full py-3 px-4 rounded-2xl bg-[#fefefe] md:bg-[#F2F2F2] focus:outline-none shadow-inner" placeholder="Enter Email" {...register("email")} disabled={isPending}/>
                     {errors.email && <ErrorMessage message={errors.email.message}></ErrorMessage>}
 
-                    <input type="password" id="password" className="px-4 w-full py-3 rounded-2xl bg-[#fefefe] md:bg-[#F2F2F2] focus:outline-none shadow-inner pt-3" placeholder="Enter Password" {...register("password")}/>
+                    <input type="password" id="password" className="px-4 w-full py-3 rounded-2xl bg-[#fefefe] md:bg-[#F2F2F2] focus:outline-none shadow-inner pt-3" placeholder="Enter Password" {...register("password")} disabled={isPending}/>
                     {errors.password && <ErrorMessage message={errors.password.message}></ErrorMessage>}
 
-                    <input type="password" id="confirmPassword" className="px-4 w-full py-3 rounded-2xl bg-[#fefefe] md:bg-[#F2F2F2] focus:outline-none shadow-inner" placeholder="Confirm Password" {...register("confirmPassword")}/>
+                    <input type="password" id="confirmPassword" className="px-4 w-full py-3 rounded-2xl bg-[#fefefe] md:bg-[#F2F2F2] focus:outline-none shadow-inner" placeholder="Confirm Password" {...register("confirmPassword")} disabled={isPending}/>
                     {errors.confirmPassword && <ErrorMessage message={errors.confirmPassword.message}></ErrorMessage>}
                     
                     <div className="flex w-full items-end justify-end">
@@ -47,7 +52,7 @@ export const RegisterForm = () => {
                         <div className="h-px w-full bg-black/10 rounded-full md:hidden px-5"></div>
                     </div>
 
-                    <button type="submit" className="w-full bg-[#6C48C5] py-3 rounded-2xl text-center mt-3 md:mt-0 mb-2 hover:bg-[#6C48C5]/80 transition-all duration-500">
+                    <button type="submit" className="w-full bg-[#6C48C5] py-3 rounded-2xl text-center mt-3 md:mt-0 mb-2 hover:bg-[#6C48C5]/80 transition-all duration-500" disabled={isPending}>
                         <h1 className="text-white">Create an Account</h1>
                     </button>
 

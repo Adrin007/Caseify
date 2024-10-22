@@ -23,8 +23,10 @@ export const LoginForm = () => {
     const submitCallback = (values:z.infer<typeof LoginSchema>) => {
         console.log(values)
         setTransition(()=>{
-            LoginAction(values).then((data: { message: string; context: string })=>{
-                TailwindToast({message:data.message,context:data.context})
+            LoginAction(values).then((data)=>{
+                if(data){
+                    TailwindToast({message:data.message,context:data.context})
+                }
             })
         })
     }
