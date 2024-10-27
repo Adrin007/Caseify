@@ -147,3 +147,15 @@
 .toast{
   background-color:rebeccapurple;
 }
+.arrow{
+  position: relative;
+  animation: moveBackAndForth 2s ease-in-out infinite;
+}
+@keyframes moveBackAndForth {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+}

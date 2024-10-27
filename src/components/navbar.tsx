@@ -1,6 +1,9 @@
 import { ArrowRight } from 'lucide-react'
 import { useRouter } from 'next/navigation';
-const Navbar = () => {
+interface navBarProps{
+  buttons:string
+}
+const Navbar = ({buttons}:navBarProps) => {
   const router = useRouter()
   const loginClickHandler = () =>{
     router.push('/auth/login')
@@ -14,7 +17,7 @@ const Navbar = () => {
           <div className='ml-7 md:ml-[5rem] relative'>
             <h1 className='font-bold text-lg'>CASEi<span className='text-[#6C48C5]'>FY</span></h1>
           </div>
-          <div className='flex flex-row gap-5 mr-3 md:mr-[4rem] text-sm items-center'>
+          {buttons == "true"?(<div className='flex flex-row gap-5 mr-3 md:mr-[4rem] text-sm items-center'>
             <div className='hover:md:bg-gray-400/15 md:px-2 md:py-2 md:rounded-lg transition-colors duration-500' onClick={signinClickHandler}>
               <h1>Register</h1>
             </div>
@@ -30,7 +33,7 @@ const Navbar = () => {
                 <ArrowRight className='size-[18px] mt-[1.5px] text-white'></ArrowRight>
               </div>
             </div>
-          </div>
+          </div>):null}
         </div>
     </div>
   )

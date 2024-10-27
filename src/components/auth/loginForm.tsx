@@ -32,7 +32,7 @@ export const LoginForm = () => {
     }
 
     return (
-        <div className="w-full mt-8 md:mt-5 bg-[#E6E6FA] md:bg-white/40 md:backdrop-filter md:backdrop-blur-[90px] rounded-2xl px-1">
+        <div className="w-full mt-8 md:-mt-5 bg-[#E6E6FA] md:bg-white/40 md:backdrop-filter md:backdrop-blur-[90px] rounded-2xl px-1">
 
             <div className="flex flex-col items-center justify-center pt-10 gap-3 px-3">
 

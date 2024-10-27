@@ -14,7 +14,7 @@ export const LoginAction = async(values:z.infer<typeof LoginSchema>) => {
 
     try {
 
-        await signIn("credentials",{email,password,redirectTo:"/dashboard"})
+        await signIn("credentials",{email,password})
 
     } catch (error) {
 
