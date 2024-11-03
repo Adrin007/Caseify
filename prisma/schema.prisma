@@ -33,3 +33,11 @@ model Account {
   @@unique([provider, providerAccountId])
   @@map("accounts")
 }
+model Configure{
+  id String @id @default(cuid())
+  width Int
+  height Int
+  imageUrl String
+  fileName String?
+  croppedImageUrl String?
+}

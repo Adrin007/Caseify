@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
-import authConfig from "../auth.config";
-import { ApiRoutes, AuthRoutes, DefaultLoginRoute, PublicRoutes } from "../routes";
+import authConfig from "./auth.config";
+import { ApiRoutes, AuthRoutes, DefaultLoginRoute, PublicRoutes } from "./routes";
 const {auth} = NextAuth(authConfig)
 
 export default auth(async(request)=>{
