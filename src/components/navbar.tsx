@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import { useRouter } from 'next/navigation';
+import { FaAsterisk } from "react-icons/fa";
 interface navBarProps{
   buttons:string
 }
@@ -14,8 +15,9 @@ const Navbar = ({buttons}:navBarProps) => {
   return (
     <div className='sticky top-0 z-[100] border-b border-gray-200 bg-white/75 backdrop-blur-lg'>
         <div className='py-4 flex flex-row justify-between items-center'>
-          <div className='ml-7 md:ml-[5rem] relative'>
-            <h1 className='font-bold text-lg'>CASEi<span className='text-[#6C48C5]'>FY</span></h1>
+          <div className='ml-7 md:ml-[5rem] relative flex flex-row items-center justify-center gap-2' id='logoContainer' onClick={()=>{router.push("/")}}>
+            <FaAsterisk className='rotate-90 text-[#6C48C5] w-5 h-5 logo-main transition-all duration-700 ease-in-out'/>
+            <h1 className='font-bold text-xl'>CASEi<span className='text-[#6C48C5]'>FY</span></h1>
           </div>
           {buttons == "true"?(<div className='flex flex-row gap-5 mr-3 md:mr-[4rem] text-sm items-center'>
             <div className='hover:md:bg-gray-400/15 md:px-2 md:py-2 md:rounded-lg transition-colors duration-500' onClick={signinClickHandler}>

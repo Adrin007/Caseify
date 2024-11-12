@@ -1,12 +1,12 @@
 generator client {
   provider = "prisma-client-js"
 }
-// command to generate Database : npx prisma generate
-//  command to push schema int Database : npx prisma db push
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
 model User {
   id            String    @id @default(cuid())
   email         String?   @unique
@@ -14,30 +14,64 @@ model User {
   image         String?
   password      String?
   accounts      Account[]
+
   @@map("users")
 }
+
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String  @map("user_id")
-  type               String
-  provider           String
-  providerAccountId  String  @map("provider_account_id")
-  refresh_token      String? @db.Text
-  access_token       String? @db.Text
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String? @db.Text
-  session_state      String?
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id                String  @id @default(cuid())
+  userId            String  @map("user_id")
+  type              String
+  provider          String
+  providerAccountId String  @map("provider_account_id")
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+  user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@unique([provider, providerAccountId])
   @@map("accounts")
 }
-model Configure{
-  id String @id @default(cuid())
-  width Int
-  height Int
-  imageUrl String
-  fileName String?
+
+enum PhoneModel {
+  iphonex
+  iphone11
+  iphone12
+  iphone13
+  iphone14
+  iphone15
+}
+
+enum CaseMaterial {
+  silicone
+  polycarbonate
+}
+
+enum CaseFinish {
+  smooth
+  textured
+}
+
+enum CaseColor {
+  Black
+  Blue
+  Red
+  Lavender
+}
+
+model Configure {
+  id              String  @id @default(cuid())
+  width           Int
+  height          Int
+  imageUrl        String
+  fileName        String?
   croppedImageUrl String?
+  color           CaseColor?
+  model           PhoneModel?
+  material        CaseMaterial?
+  finish          CaseFinish?
 }

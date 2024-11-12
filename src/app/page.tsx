@@ -8,6 +8,7 @@ import PhoneSkel from "@/components/phoneSkel";
 import { useEffect, useState } from "react";
 import Footer from "@/components/footer";
 import AnimatedWrapper from "@/components/animatedWrapper";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const images = [
@@ -19,7 +20,7 @@ export default function Home() {
     "/testimonials/6.jpeg",
   ]
   const [currentImage, setCurrentImage] = useState(0)
-
+  const router = useRouter()
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % images.length);
@@ -294,7 +295,9 @@ export default function Home() {
       </div>
       <AnimatedWrapper>
         <div className="mx-10 flex items-center justify-center md:mt-20 mt-10">
-          <div className="flex flex-row bg-[#6C48C5] text-white py-5 md:px-10 px-5 rounded-r-full rounded-l-full justify-center items-center md:w-fit gap-3 shadow-2xl">
+          <div className="flex flex-row bg-[#6C48C5] text-white py-5 md:px-10 px-5 rounded-r-full rounded-l-full justify-center items-center md:w-fit gap-3 shadow-2xl" onClick={()=>{
+            router.push("/configure/upload")
+          }}>
             <h1 className="md:mt-1">Create your case now</h1>
             <ArrowRight className='size-[18px] mt-[5px] text-white'></ArrowRight>
           </div>

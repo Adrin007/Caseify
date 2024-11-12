@@ -5,7 +5,7 @@ interface StepperProps{
 }
 const Stepper = ({one,two,three}:StepperProps) => {
     return (
-        <ol className="flex items-center p-3 space-x-2 text-sm font-medium text-center text-gray-500 rounded-lg shadow-sm dark:text-gray-400 sm:text-base dark:bg-gray-800 dark:border-gray-700 sm:p-4 sm:space-x-4 rtl:space-x-reverse">
+        <ol className="flex items-center bg-white p-3 space-x-2 text-sm font-medium text-center text-gray-500 rounded-lg dark:text-gray-400 sm:text-base dark:bg-gray-800 dark:border-gray-700 sm:p-4 sm:space-x-4 rtl:space-x-reverse">
             <li className="flex items-center">
                 <span className={`flex items-center justify-center md:w-6 md:h-6 w-5 h-5 me-2 text-xs border-2 rounded-full ${one == "true"?"border-[#6C48C5] bg-[#6C48C5] text-white":"border-gray-500"} transition-all duration-500`}>
                     1

@@ -159,3 +159,7 @@
     transform: translateX(3px);
   }
 }
+
+#logoContainer:hover .logo-main{
+  rotate: 180deg;
+}

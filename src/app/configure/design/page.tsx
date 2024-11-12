@@ -1,24 +1,23 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @next/next/no-img-element */
-"use client"
-import Navbar from "@/components/navbar";
-import Stepper from "@/components/stepper";
+import ImageConfigurator from "@/components/configurator";
+import { db } from "@/lib/db";
 interface PageProps {
     searchParams: {
         id?: string;
     };
 }
-const Design = ({ searchParams }: PageProps) => {
+const Design = async({ searchParams }: PageProps) => {
     const { id } = searchParams;
+    const imageData = await db.configure.findUnique({
+        where:{id}
+    })
+    const configId = imageData?.id || ""
+    const imageUrl = imageData?.imageUrl || ""
+    const imageHeight = imageData?.height || 500
+    const imageWidth = imageData?.width || 500
     return (
-        <div className="w-full bg-white">
-            <Navbar buttons="false"></Navbar>
-            <div className="flex items-center justify-center md:mx-[5rem]">
-                <div className="mt-2">
-                    <Stepper one="true" two="true" three={"false"}></Stepper>
-                </div>
-            </div>
-        </div>
+        <ImageConfigurator configID={configId} url={imageUrl} height={imageHeight} width={imageWidth}/>
     );
 };
 
