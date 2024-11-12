@@ -299,7 +299,7 @@ const ImageConfigurator = ({configID, url, height, width }: ImageProps) => {
                     <div className='w-full h-px bg-zinc-600/50'/>
                     <div className='flex flex-row items-center justify-between w-full gap-4'>
                         <h1>{formatPrice((BASE_PRICE+options.material.price+options.finish.price),options.currencies.key)}</h1>
-                        <div className='flex flex-row bg-[#6C48C5] hover:opacity-90 w-full md:py-1 py-2 items-center justify-center gap-2 rounded-lg text-white' onClick={()=>{saveConfig({color:options.color.value,material:options.material.value,finish:options.finish.value,model:options.model.value})}}>
+                        <div className='flex flex-row bg-[#6C48C5] hover:opacity-90 w-full md:py-1 py-2 items-center justify-center gap-2 rounded-lg text-white' onClick={()=>{}}>
                                 <h1>Continue</h1>
                                 <FaArrowRightLong/>
                         </div>
