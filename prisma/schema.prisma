@@ -37,32 +37,6 @@ model Account {
   @@map("accounts")
 }
 
-enum PhoneModel {
-  iphonex
-  iphone11
-  iphone12
-  iphone13
-  iphone14
-  iphone15
-}
-
-enum CaseMaterial {
-  silicone
-  polycarbonate
-}
-
-enum CaseFinish {
-  smooth
-  textured
-}
-
-enum CaseColor {
-  Black
-  Blue
-  Red
-  Lavender
-}
-
 model Configure {
   id              String  @id @default(cuid())
   width           Int
@@ -70,8 +44,8 @@ model Configure {
   imageUrl        String
   fileName        String?
   croppedImageUrl String?
-  color           CaseColor?
-  model           PhoneModel?
-  material        CaseMaterial?
-  finish          CaseFinish?
+  color           String?
+  model           String?
+  material        String?
+  finish          String?
 }

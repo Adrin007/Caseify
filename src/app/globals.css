@@ -163,3 +163,7 @@
 #logoContainer:hover .logo-main{
   rotate: 180deg;
 }
+.dashedHR{
+  border-top: 2px dashed rgb(191, 182, 182);
+  opacity: 70;
+}

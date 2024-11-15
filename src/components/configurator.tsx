@@ -21,6 +21,8 @@ import { useUploadThing } from '@/lib/uploadthing'
 import { TailwindToast } from './tailwindToast'
 import { useMutation } from '@tanstack/react-query'
 import { saveCaseConfig, saveCaseConfigArgs } from '@/app/configure/design/serverAction'
+import { useRouter } from 'next/navigation'
+import { CgSpinner } from "react-icons/cg"
 interface ImageProps {
     configID:string
     url: string
@@ -28,10 +30,12 @@ interface ImageProps {
     width: number
 }
 const ImageConfigurator = ({configID, url, height, width }: ImageProps) => {
+    const router = useRouter()
     const [options, setOptions] = useState({
         color: COLORS[0], model: MODELS[0], material: MATERIALS[0],
         finish: FINISHES[0],currencies:CURRENCIES[0]
     })
+    const [isLoading,setIsLoading] = useState(false)
     const [isDDOpen, setDDOpen] = useState(false)
     const [isCurrencyDropDownOpen,setCurrencyDropDownOpen] = useState(false)
     const [renderedDimension,setRenderedDimension] = useState({
@@ -48,7 +52,16 @@ const ImageConfigurator = ({configID, url, height, width }: ImageProps) => {
     const {mutate:saveConfig} = useMutation({
         mutationKey:["save-config"],
         mutationFn:async (args:saveCaseConfigArgs) => {
+            setIsLoading(true)
             await Promise.all([uploadCroppedImage(),saveCaseConfig(args)])
+        },
+        onError: () => {
+            setIsLoading(false)
+            TailwindToast({message:"Something Went Wrong!",context:"fail"})
+        },
+        onSuccess: () => {
+            router.push(`/configure/preview?id=${configID}`)
+            TailwindToast({message:"You're Ready To Go!",context:"success"})
         }
     })
     async function uploadCroppedImage(){
@@ -299,9 +312,9 @@ const ImageConfigurator = ({configID, url, height, width }: ImageProps) => {
                     <div className='w-full h-px bg-zinc-600/50'/>
                     <div className='flex flex-row items-center justify-between w-full gap-4'>
                         <h1>{formatPrice((BASE_PRICE+options.material.price+options.finish.price),options.currencies.key)}</h1>
-                        <div className='flex flex-row bg-[#6C48C5] hover:opacity-90 w-full md:py-1 py-2 items-center justify-center gap-2 rounded-lg text-white' onClick={()=>{}}>
-                                <h1>Continue</h1>
-                                <FaArrowRightLong/>
+                        <div className='flex flex-row bg-[#6C48C5] hover:opacity-90 w-full h-[2.7rem] items-center justify-center gap-2 rounded-lg text-white' onClick={()=>{saveConfig({color:options.color.value,material:options.material.value,finish:options.finish.value,model:options.model.value,configID})}}>
+                                {isLoading?<div className='flex items-center justify-center animate-spin'><CgSpinner className='text-white w-6 h-6'/></div>:<div className='flex flex-row gap-3 items-center justify-center'><h1>Continue</h1>
+                                <FaArrowRightLong/></div>}
                         </div>
                     </div>
                 </div>
