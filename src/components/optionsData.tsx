@@ -54,3 +54,12 @@ export const CURRENCIES = [
 ]
 
 export const BASE_PRICE = 325
+
+export const PRODUCT_PRICE = {
+    finish:{
+        textured:100
+    },
+    material:{
+        polycarbonate:220
+    }
+}
