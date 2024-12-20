@@ -7,8 +7,8 @@ import { CgSpinner } from "react-icons/cg";
 
 const authCallback = () => {
     const router = useRouter()
-    const localConfigId = localStorage.getItem("configId")
     useEffect(()=>{
+        const localConfigId = localStorage.getItem("configId")
         if(localConfigId){
             router.push(`/configure/preview/?id=${localConfigId}`)
             localStorage.removeItem("configId")
