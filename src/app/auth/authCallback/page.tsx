@@ -11,12 +11,14 @@ const authCallback = () => {
         const localConfigId = localStorage.getItem("configId")
         if(localConfigId){
             router.push(`/configure/preview/?id=${localConfigId}`)
-            localStorage.removeItem("configId")
+            setTimeout(() => {
+                localStorage.removeItem("configId");
+            }, 100)
         }
         else{
             router.push("/")
         }
-    },[])
+    },[router])
   return (
     <div className="w-full min-h-screen h-[100vh] flex items-center justify-center">
         <div className="flex flex-col items-center justify-center gap-5">

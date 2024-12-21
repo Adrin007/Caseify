@@ -19,6 +19,9 @@ export const ConfigurePaymentSession = async ({ configID }: pageProps) => {
     }
     const userSession = await auth()
     if (userSession == null) {
+        if (process.env.NODE_ENV == "production"){
+            return {url:process.env.NEXT_PUBLIC_SERVER_URL_PRODUCTION+`/auth/login`}
+        }
         return {url:process.env.NEXT_PUBLIC_SERVER_URL+`/auth/login`}
     }
     const userData = await db.user.findUnique({
